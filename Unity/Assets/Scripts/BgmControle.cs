@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BgmControle : MonoBehaviour {
+public class BgmControle: MonoBehaviour {
 
 
 	public float speed = 60.0f;
 	// Use this for initialization
 	void Start () {
-
-		audio.Play();
-
-	
+		SoundManager.Instance.PlayBGM(0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
 
 		if (Input.touchCount == 1) {
 			
@@ -40,7 +39,11 @@ public class BgmControle : MonoBehaviour {
 
 						transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.x, transform.position.y), speed );
 
+						float check = (target.x - 0.5f)/6;
 
+						Debug.Log(check);
+
+						SoundManager.Instance.volume.BGM = check; 
 					}
 
 				}

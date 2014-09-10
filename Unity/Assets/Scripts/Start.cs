@@ -22,7 +22,7 @@ public class Start : MonoBehaviour {
 				if(colition2d) {
 					RaycastHit2D hitObject = Physics2D.Raycast(tapPoint, -Vector2.up);
 				if(hitObject.collider.gameObject.name =="START"){
-					Application.LoadLevel("Scene1");
+					Application.LoadLevel("Load");
 				}
 				if(hitObject.collider.gameObject.name =="OPTION"){
 					Application.LoadLevel("Option");
